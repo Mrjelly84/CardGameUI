@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace CardGameUI
 {
@@ -23,6 +24,26 @@ namespace CardGameUI
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            Game game = new Game();
+
+            // Capture output from the game
+            StringBuilder outputBuilder = new StringBuilder();
+            using (var writer = new StringWriter(outputBuilder))
+            {
+                var originalOut = Console.Out;
+                Console.SetOut(writer);
+
+                game.Start();
+
+                Console.SetOut(originalOut);
+            }
+
+            // Display captured output in the TextBlock
+            txtBkOutput.Text = outputBuilder.ToString();
         }
     }
 }
