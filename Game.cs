@@ -21,7 +21,7 @@ namespace CardGameUI
             {
                 Console.WriteLine($"\n--- Round {round + 1} ---");
                 PlayRound();
-                Thread.Sleep(500);
+                //Thread.Sleep(100);
                 round++;
             }
 

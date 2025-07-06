@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Card Game UI" Height="450" Width="800">
     <Grid Background="#FF26B79C">
-        <Button x:Name="btnStart" Content="Start Game" Click="btnStart_Click" Margin="490,358,238,34" RenderTransformOrigin="0.556,0.397" />
+        <Button x:Name="btnStart" Content="Start Game" Width="100" Height="30" Click="btnStart_Click" Margin="278,359,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
         <Button x:Name="btnAddPlayer" Content="Add player" HorizontalAlignment="Left" Margin="400,359,0,0" VerticalAlignment="Top" Height="42" Width="66"/>
         <ScrollViewer VerticalScrollBarVisibility="Auto" Width="400" Height="303" VerticalAlignment="Top" Margin="200,17,200,0">
             <TextBlock x:Name="txtBkOutput" TextWrapping="Wrap" />
