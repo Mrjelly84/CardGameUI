@@ -32,6 +32,8 @@ namespace CardGameUI
             }
         }
 
+        public int Count => cards.Count;
+
         public void Shuffle()
         {
             Random rand = new Random();
@@ -44,10 +46,16 @@ namespace CardGameUI
             }
         }
 
-        public List<Card> Deal(int count)
+        public List<Card> DrawRandomCards(int count)
         {
-            var hand = cards.GetRange(0, count);
-            cards.RemoveRange(0, count);
+            List<Card> hand = new List<Card>();
+            Random rand = new Random();
+            for (int i = 0; i < count && cards.Count > 0; i++)
+            {
+                int index = rand.Next(cards.Count);
+                hand.Add(cards[index]);
+                cards.RemoveAt(index);
+            }
             return hand;
         }
     }

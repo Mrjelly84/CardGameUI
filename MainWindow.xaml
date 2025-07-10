@@ -8,7 +8,17 @@
         Title="Card Game UI" Height="450" Width="800">
     <Grid Background="#FF26B79C">
         <Button x:Name="btnStart" Content="Start Game" Width="100" Height="30" Click="btnStart_Click" Margin="278,359,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Button x:Name="btnAddPlayer" Content="Add player" HorizontalAlignment="Left" Margin="400,359,0,0" VerticalAlignment="Top" Height="42" Width="66"/>
+        <!-- Status label above btnRestart -->
+        <Label x:Name="lblStatus"
+               Content="Status: Ready"
+               HorizontalAlignment="Left"
+               Margin="400,320,0,0"
+               VerticalAlignment="Top"
+               Height="30"
+               Width="150"
+               FontWeight="Bold"
+               Foreground="DarkBlue"/>
+        <Button x:Name="btnRestart" Content="Restart Game" HorizontalAlignment="Left" Margin="400,359,0,0" VerticalAlignment="Top" Height="42" Width="100" Click="btnRestart_Click"/>
         <ScrollViewer VerticalScrollBarVisibility="Auto" Width="400" Height="303" VerticalAlignment="Top" Margin="200,17,200,0">
             <TextBlock x:Name="txtBkOutput" TextWrapping="Wrap" />
         </ScrollViewer>
