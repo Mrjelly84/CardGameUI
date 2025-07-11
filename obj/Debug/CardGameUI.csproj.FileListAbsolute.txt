@@ -13,4 +13,3 @@ C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGa
 C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.csproj.CoreCompileInputs.cache
 C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.exe
 C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.pdb
-C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.exe.config

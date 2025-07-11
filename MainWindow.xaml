@@ -5,13 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardGameUI"
         mc:Ignorable="d"
-        Title="Card Game UI" Height="450" Width="800">
-    <Grid Background="#FF26B79C">
-        
-        
-        <Button x:Name="btnRestart" Content="Play Game" HorizontalAlignment="Left" Margin="400,359,0,0" VerticalAlignment="Top" Height="42" Width="100" Click="btnRestart_Click"/>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Width="400" Height="303" VerticalAlignment="Top" Margin="200,17,200,0">
-            <TextBlock x:Name="txtBkOutput" TextWrapping="Wrap" />
+        Title="Card Game UI" Height="950" Width="800">
+    <Grid Background="#ff3ac6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Button x:Name="btnPlay" Content="Play Game" HorizontalAlignment="Left" Margin="640,787,0,0" VerticalAlignment="Top" Height="42" Width="100" Click="btnPlay_Click" BorderBrush="#FF0093F1" Background="#FFE6FF00"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Width="400" Height="850" VerticalAlignment="Top" Margin="200,17,200,0">
+            <TextBlock x:Name="txtBkOutput" TextWrapping="Wrap" Foreground="#FF4161E0" />
         </ScrollViewer>
+        <TextBlock x:Name="Timer" HorizontalAlignment="Left" Height="42" Margin="644,686,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92"/>
     </Grid>
 </Window>
