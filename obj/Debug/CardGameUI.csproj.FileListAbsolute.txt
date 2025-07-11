@@ -1,0 +1,16 @@
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\bin\Debug\CardGameUI.exe.config
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\bin\Debug\CardGameUI.exe
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\bin\Debug\CardGameUI.pdb
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.csproj.AssemblyReference.cache
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\MainWindow.g.cs
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\App.g.cs
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI_MarkupCompile.cache
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI_MarkupCompile.lref
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\MainWindow.baml
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.g.resources
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.Properties.Resources.resources
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.csproj.GenerateResource.cache
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.csproj.CoreCompileInputs.cache
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.exe
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.pdb
+C:\Users\williamd\Downloads\CardGameUI-master\CardGameUI-master\obj\Debug\CardGameUI.exe.config

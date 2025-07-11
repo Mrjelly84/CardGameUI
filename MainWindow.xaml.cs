@@ -35,7 +35,7 @@ namespace CardGameUI
 
             // Display captured output in the TextBlock
             txtBkOutput.Text = outputBuilder.ToString();
-            lblStatus.Content = "Game started!";
+            
         }
 
         private void btnRestart_Click(object sender, RoutedEventArgs e)
@@ -55,7 +55,7 @@ namespace CardGameUI
             }
 
             // Reset UI elements as needed
-            lblStatus.Content = "Game restarted!";
+            
             txtBkOutput.Text = outputBuilder.ToString();
             // Clear card displays, scores, etc. if you have them
         }
