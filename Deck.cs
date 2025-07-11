@@ -6,6 +6,7 @@ namespace CardGameUI
     public class Deck
     {
         private List<Card> cards;
+        private static Random rng = new Random(); // Add this line
 
         public Deck()
         {
@@ -36,11 +37,12 @@ namespace CardGameUI
 
         public void Shuffle()
         {
-            Random rand = new Random();
-            for (int i = cards.Count - 1; i > 0; i--)
+            int n = cards.Count;
+            for (int i = n - 1; i > 0; i--)
             {
-                int j = rand.Next(i + 1);
-                var temp = cards[i];
+                int j = rng.Next(i + 1); // 0 <= j <= i
+                // Swap cards[i] and cards[j]
+                Card temp = cards[i];
                 cards[i] = cards[j];
                 cards[j] = temp;
             }

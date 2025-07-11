@@ -3,27 +3,41 @@ using System.Text;
 using System.Windows;
 using System.IO;
 using System.Diagnostics;
+using System.Windows.Threading;
+using System.Threading.Tasks;
 
 namespace CardGameUI
 {
-   
     public partial class MainWindow : Window
     {
-        private Game game; // Class-level field
-        private Stopwatch stopwatch; // Stopwatch to measure elapsed time
+        private Game game;
+        private Stopwatch stopwatch;
+        private DispatcherTimer dispatcherTimer;
+        private Score scoreManager = new Score();
 
         public MainWindow()
         {
             InitializeComponent();
-            stopwatch = new Stopwatch(); // Initialize the stopwatch
+            stopwatch = new Stopwatch();
+
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Interval = TimeSpan.FromMilliseconds(100); // update every 0.1s
+            dispatcherTimer.Tick += DispatcherTimer_Tick;
         }
 
-        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        private void DispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            // Live update while the game is running
+            Timer.Text = $"Time: {stopwatch.Elapsed:mm\\:ss\\.ff}";
+        }
+
+        private async void btnPlay_Click(object sender, RoutedEventArgs e)
         {
             game = new Game();
 
-            // Restart the stopwatch
             stopwatch.Restart();
+            dispatcherTimer.Start();
+            Timer.Text = $"Time: {stopwatch.Elapsed:mm\\:ss\\.ff}";
 
             // Capture output from the game
             StringBuilder outputBuilder = new StringBuilder();
@@ -32,23 +46,24 @@ namespace CardGameUI
                 var originalOut = Console.Out;
                 Console.SetOut(writer);
 
-                game.Start();
+                // Run the game asynchronously so the UI/timer can update
+                await Task.Run(() => game.Start());
 
                 Console.SetOut(originalOut);
             }
 
-
-            
-            // Stop the stopwatch
             stopwatch.Stop();
+            dispatcherTimer.Stop();
 
-            // Reset UI elements as needed
+            // Update game output
             txtBkOutput.Text = outputBuilder.ToString();
 
-            // Display the elapsed time in the Timer text block
-            Timer.Text = $"Time taken: {stopwatch.ElapsedMilliseconds} ms";
+            // Display the final elapsed time
+            Timer.Text = $"Time taken: {stopwatch.Elapsed:mm\\:ss\\.ff}";
+
+            // Record and display the score
+            scoreManager.AddScore(game.WinnerName, game.Score);
+            txtBkScore.Text = scoreManager.ToString();
         }
-
-
     }
 }

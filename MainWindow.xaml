@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardGameUI"
         mc:Ignorable="d"
-        Title="Card Game UI" Height="950" Width="800">
+        Title="Card Game " Height="950" Width="800">
     <Grid Background="#ff3ac6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -18,5 +18,6 @@
             <TextBlock x:Name="txtBkOutput" TextWrapping="Wrap" Foreground="#FF4161E0" />
         </ScrollViewer>
         <TextBlock x:Name="Timer" HorizontalAlignment="Left" Height="42" Margin="644,686,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92"/>
+        <TextBlock x:Name="txtBkScore" HorizontalAlignment="Left" Height="398" Margin="620,17,0,0" TextWrapping="Wrap" Foreground="#FF4161E0" VerticalAlignment="Top" Width="153"/>
     </Grid>
 </Window>
