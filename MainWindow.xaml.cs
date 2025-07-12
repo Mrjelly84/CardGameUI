@@ -41,15 +41,20 @@ namespace CardGameUI
 
             // Capture output from the game
             StringBuilder outputBuilder = new StringBuilder();
+            var originalOut = Console.Out;
             using (var writer = new StringWriter(outputBuilder))
             {
-                var originalOut = Console.Out;
-                Console.SetOut(writer);
+                try
+                {
+                    Console.SetOut(writer);
 
-                // Run the game asynchronously so the UI/timer can update
-                await Task.Run(() => game.Start());
-
-                Console.SetOut(originalOut);
+                    // Run the game asynchronously so the UI/timer can update
+                    await Task.Run(() => game.Start());
+                }
+                finally
+                {
+                    Console.SetOut(originalOut); // Always restore, even if exception
+                }
             }
 
             stopwatch.Stop();
