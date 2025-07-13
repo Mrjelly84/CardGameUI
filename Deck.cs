@@ -35,7 +35,7 @@ namespace CardGameUI
 
         public int Count => cards.Count;
 
-        public void Shuffle()
+        public void Shuffle()//using fisher-yates shuffle algorithm
         {
             int n = cards.Count;
             for (int i = n - 1; i > 0; i--)

@@ -69,6 +69,7 @@ namespace CardGameUI
             // Record and display the score
             scoreManager.AddScore(game.WinnerName, game.Score);
             txtBkScore.Text = scoreManager.ToString();
+            Log.LogGameResult(game.WinnerName, stopwatch.Elapsed.ToString(@"mm\:ss\.ff"));
         }
     }
 }

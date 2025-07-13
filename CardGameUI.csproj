@@ -64,6 +64,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Card.cs" />
+    <Compile Include="log.cs" />
     <Compile Include="Score.cs" />
     <Compile Include="Deck.cs" />
     <Compile Include="Game.cs" />
