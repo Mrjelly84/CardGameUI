@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CardGameUI
 {
@@ -50,14 +51,26 @@ namespace CardGameUI
 
         public List<Card> DrawRandomCards(int count)
         {
-            List<Card> hand = new List<Card>();
+            // Defensive: don't draw more than available
+            count = Math.Min(count, cards.Count);
+
             Random rand = new Random();
-            for (int i = 0; i < count && cards.Count > 0; i++)
+            int n = cards.Count;
+
+            // Partial Fisher-Yates shuffle
+            for (int i = 0; i < count; i++)
             {
-                int index = rand.Next(cards.Count);
-                hand.Add(cards[index]);
-                cards.RemoveAt(index);
+                int j = rand.Next(i, n); // pick random index from i to n-1
+                                         // Swap cards[i] and cards[j]
+                (cards[i], cards[j]) = (cards[j], cards[i]);
             }
+
+            // Take the first 'count' cards as the hand
+            List<Card> hand = cards.Take(count).ToList();
+
+            // Remove the drawn cards from the deck
+            cards.RemoveRange(0, count);
+
             return hand;
         }
     }
